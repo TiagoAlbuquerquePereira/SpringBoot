@@ -3,14 +3,23 @@ package com.educandoweb.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
 	private String phone;
-	private String passowrd;
+	private String passoword;
 
 	public User() {
 	}
@@ -21,7 +30,7 @@ public class User implements Serializable {
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
-		this.passowrd = passowrd;
+		this.passoword = passowrd;
 	}
 
 	public Long getId() {
@@ -57,11 +66,11 @@ public class User implements Serializable {
 	}
 
 	public String getPassowrd() {
-		return passowrd;
+		return passoword;
 	}
 
 	public void setPassowrd(String passowrd) {
-		this.passowrd = passowrd;
+		this.passoword = passowrd;
 	}
 
 	@Override
@@ -83,7 +92,7 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", passowrd=" + passowrd
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", passowrd=" + passoword
 				+ "]";
 	}
 
